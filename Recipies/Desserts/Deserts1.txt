@@ -1,0 +1,1 @@
+Code opens text files and shows contents in the white field.
