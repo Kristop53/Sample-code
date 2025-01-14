@@ -1,12 +1,19 @@
 import tkinter as tk
 import os
+import threading
 import tkinter.ttk as ttk
 from tkinter import scrolledtext
 
 def find_folder():
-    for root, dirs, files in os.walk("C:\\Users\\"+os.getlogin()+"\\"):
-        if os.path.basename(root) == "Recipies":
-            return root
+    global Recipies
+
+    try:
+        for root, dirs, files in os.walk("C:\\Users\\"+os.getlogin()+"\\"):
+            if os.path.basename(root) == "Recipies":
+                return root
+    except PermissionError:
+        pass
+
 
 # Write all options depending on first selection
 def Scroll_For_Options(thing):
