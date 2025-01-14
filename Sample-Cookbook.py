@@ -13,11 +13,11 @@ operation = [
 i, j, k=0, 0, 0
 deslen, preslen, dinlen = 0, 0, 0
 user = os.getlogin()
-for x in os.listdir("C:\\Users\\"+user+"\\desktop\\Recipies\\Desserts\\"):
+for x in os.listdir("C:\\Users\\"+user+"\\Documents\\GitHub\\Sample-code\\Recipies\\Desserts"):
     deslen += 1
-for x in os.listdir("C:\\Users\\"+user+"\\desktop\\Recipies\\Preservatives\\"):
+for x in os.listdir("C:\\Users\\"+user+"\\Documents\\GitHub\\Sample-code\\Recipies\\Preservatives"):
     preslen += 1
-for x in os.listdir("C:\\Users\\"+user+"\\desktop\\Recipies\\Dinners\\"):
+for x in os.listdir("C:\\Users\\"+user+"\\Documents\\GitHub\\Sample-code\\Recipies\\Dinners"):
     dinlen +=1
 
 # Prepare arrays for files
@@ -26,16 +26,16 @@ Preservatives = [None]*preslen
 Dinners = [None]*dinlen
 
 #Fill all arrays with files
-for root, dirs, files in os.walk("C:\\Users\\"+user+"\\desktop\\Recipies\\Desserts\\"):
+for root, dirs, files in os.walk("C:\\Users\\"+user+"\\Documents\\GitHub\\Sample-code\\Recipies\\Desserts"):
         for file in files:
             Desserts[i] = (os.path.join(file)) 
             i+=1
 
-for root, dirs, files in os.walk("C:\\Users\\"+user+"\\desktop\\Recipies\\Preservatives"):
+for root, dirs, files in os.walk("C:\\Users\\"+user+"\\Documents\\GitHub\\Sample-code\\Recipies\\Preservatives"):
         for file in files:
             Preservatives[j] = os.path.join(file)
             j+=1
-for root, dirs, files in os.walk("C:\\Users\\"+user+"\\desktop\\Recipies\\Dinners"):
+for root, dirs, files in os.walk("C:\\Users\\"+user+"\\Documents\\GitHub\\Sample-code\\Recipies\\Dinners"):
         for file in files:
             Dinners[k] = os.path.join(file)
             k+=1
@@ -57,7 +57,7 @@ def Scroll_For_Options(thing):
 # Open file and write in the result_label
 def Writing():
     text.delete('1.0', tk.END)
-    with open("C:\\Users\\"+user+"\\desktop\\Recipies\\"+first_combo.get()+"\\"+second_combo.get(), "r", encoding='utf-8') as wynik:
+    with open("C:\\Users\\"+user+"\\Documents\\Github\\Sample-code\\Recipies\\"+first_combo.get()+"\\"+second_combo.get(), "r", encoding='utf-8') as wynik:
         stuff = wynik.read()
         text.insert(tk.END, stuff)
         wynik.close()
